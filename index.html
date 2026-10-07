@@ -40,6 +40,8 @@
                       Leave "photo" empty ("") and the card shows the county name instead.
                       Photos can also be uploaded right next to this file:
                       "photo": "<file name>.jpg"
+                      Optional: "recap" shows a press release's text in the card's pop-up
+                      (used for stops whose release isn't on the website).
                       Optional: "title" replaces the "<County> County" heading, and
                       "label" replaces the town line under it.
 
@@ -93,7 +95,7 @@ window.PAGE_DATA = {
     {"date": "2026-08-01", "county": "Blue Earth", "town": "Mankato", "photo": "https://run.imgix.net/98efac20-09d5-40de-bced-671be80133fe/adb22f32-3bf4-4a8e-9610-efe12afd8b76/adb22f32-3bf4-4a8e-9610-efe12afd8b76.png", "alt": "A full auditorium at the Mankato town hall", "link": "/news/jake-johnson-holds-town-hall-in-blue-earth-county"},
     {"date": "2026-08-06", "county": "Rock", "town": "Luverne", "photo": "https://run.imgix.net/98efac20-09d5-40de-bced-671be80133fe/db30d3fe-6423-4023-b90b-5c2259a0caa8/db30d3fe-6423-4023-b90b-5c2259a0caa8.jpg", "alt": "Town hall in Luverne", "link": "/news/jake-johnson-holds-town-hall-in-rock-county"},
     {"date": "2026-08-10", "county": "Nobles", "town": "Worthington", "photo": "https://run.imgix.net/98efac20-09d5-40de-bced-671be80133fe/d3cdb0a8-ef4d-4e63-8f4d-fbea9d8816b1/d3cdb0a8-ef4d-4e63-8f4d-fbea9d8816b1.png", "alt": "Town hall in Worthington", "link": "/news/jake-johnson-holds-town-hall-in-nobles-county"},
-    {"date": "2026-08-11", "county": "Freeborn", "town": "Albert Lea", "photo": "freeborn-albert-lea.jpg", "alt": "Jake Johnson taking a question from a full room at Edgewater Pavilion in Albert Lea", "link": ""},
+    {"date": "2026-08-11", "county": "Freeborn", "town": "Albert Lea", "photo": "freeborn-albert-lea.jpg", "alt": "Jake Johnson taking a question from a full room at Edgewater Pavilion in Albert Lea", "link": "", "recap": {"title": "Jake Johnson Holds Town Hall in Freeborn County", "date": "August 11, 2026", "paragraphs": ["Tonight, Jake Johnson held a town hall meeting with over 50 people in Freeborn County. The meeting was open to all members of the public, was widely advertised beforehand, and had no pre-screening of questions. Jake took questions about how he would approach recent cuts to rural healthcare, the construction of new data centers and power lines, and reaching across the aisle to work with Republicans.", "“We had great conversations at our town hall meeting in Albert Lea tonight,” said Jake Johnson. “We’ve now hosted a dozen town hall meetings across southern Minnesota, and we’re not slowing down. By the end of the month, we will have hosted a town hall meeting in each of the 21 counties in our district. Because that’s what the people of southern Minnesota deserve.”", "Jake was introduced by Terry Gjersvik, who is a farmer in Freeborn County. As many voters know, Finstad instead opts for what he calls “tele town halls”, which are unannounced phone calls that only go to a set of preselected individuals chosen by Finstad’s office, where they can hear Finstad respond to questions with no proof that those questions are not presubmitted."]}},
     {"date": "2026-08-15", "county": "Olmsted", "town": "Rochester", "photo": "https://run.imgix.net/98efac20-09d5-40de-bced-671be80133fe/dbaddd41-67be-4005-8322-87aabafe7b71/dbaddd41-67be-4005-8322-87aabafe7b71.jpg", "alt": "Over 200 people at the Rochester town hall, with a scoreboard reading Johnson 13, Finstad 0", "link": "/news/jake-johnson-holds-town-hall-in-olmsted-county"},
     {"date": "2026-08-16", "county": "Goodhue", "town": "Red Wing", "photo": "https://run.imgix.net/98efac20-09d5-40de-bced-671be80133fe/0df3fb8a-79a8-4a9e-89af-0a6edc8e59e8/0df3fb8a-79a8-4a9e-89af-0a6edc8e59e8.png", "alt": "Town hall in Red Wing", "link": "/news/jake-johnson-holds-town-hall-in-goodhue-county"},
     {"date": "2026-08-17", "county": "Brown", "town": "New Ulm", "photo": "https://run.imgix.net/98efac20-09d5-40de-bced-671be80133fe/9b941018-8ec7-4b9f-9297-c0ce3bb0c19b/9b941018-8ec7-4b9f-9297-c0ce3bb0c19b.png", "alt": "Town hall in New Ulm", "link": "/news/jake-johnson-holds-town-hall-in-brown-county"},
@@ -103,7 +105,7 @@ window.PAGE_DATA = {
     {"date": "2026-08-25", "county": "Houston", "town": "Money Creek", "photo": "https://run.imgix.net/98efac20-09d5-40de-bced-671be80133fe/cd51c693-3a0e-4acd-a4b6-b6d1d5aa865f/cd51c693-3a0e-4acd-a4b6-b6d1d5aa865f.jpg", "alt": "Town hall in Money Creek", "link": "/news/jake-johnson-holds-town-hall-in-houston-county"},
     {"date": "2026-08-27", "county": "Martin", "town": "Fairmont", "photo": "https://run.imgix.net/98efac20-09d5-40de-bced-671be80133fe/ca5f6b85-a52b-4299-b34e-055ca73da715/ca5f6b85-a52b-4299-b34e-055ca73da715.jpg", "alt": "Town hall in Fairmont", "link": "/news/jake-johnson-holds-town-hall-in-martin-county"},
     {"date": "2026-08-30", "county": "Dodge", "town": "West Concord", "photo": "https://run.imgix.net/98efac20-09d5-40de-bced-671be80133fe/eb5f45c7-5516-45dc-ba79-bef7633a1219/eb5f45c7-5516-45dc-ba79-bef7633a1219.jpg", "alt": "Jake Johnson's 21st town hall, in West Concord", "link": "/news/jake-johnson-completes-21-county-town-hall-tour-holding-one-in-every-county-in-southern-minnesota"},
-    {"date": "2026-09-26", "county": "Fillmore", "town": "Harmony", "photo": "harmony.jpg", "alt": "Jake Johnson speaking to the crowd at the Harmony Community Center", "link": "", "badge": "+1", "title": "Extra Credit", "label": "Harmony, Fillmore County"}
+    {"date": "2026-09-26", "county": "Fillmore", "town": "Harmony", "photo": "harmony.jpg", "alt": "Jake Johnson speaking to the crowd at the Harmony Community Center", "link": "", "badge": "+1", "title": "Extra Credit", "label": "Harmony, Fillmore County", "recap": {"title": "Jake Johnson Hosts Another Town Hall for Extra Credit", "date": "September 26, 2026", "paragraphs": ["HARMONY, MN — In what has become a recurring theme of Jake Johnson’s campaign for Congress, tonight Jake hosted yet another in-person, public town hall meeting where anyone could walk in and ask any question. This went beyond his commitment to hold 21 town hall meetings before the election, which he has already completed.", "“I enjoy listening to the people of southern Minnesota, and I don’t like doing the bare minimum,” said Jake Johnson. “So tonight we went for extra credit — hosting our 22nd town hall meeting. People had great questions about how we can make things cheaper, take on corruption, and invest in our small towns, not data centers. I look forward to taking what I heard tonight with me to the halls of Congress.”", "This summer, Jake Johnson hosted 21 town hall meetings, one in every county in Minnesota’s first congressional district. Brad Finstad has never hosted a town hall meeting in his 4+ years in Congress. That’s the difference."]}}
   ]
 };
 </script>
@@ -263,6 +265,10 @@ window.PAGE_DATA = {
   .media .v iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
   .media figcaption{font-size:.9rem;color:var(--muted);margin-top:6px}
   .media figure{margin:0}
+  .recap{border-top:2px solid var(--tint);padding-top:14px}
+  .recap .recap-k{font-family:var(--head);font-weight:700;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+  .recap h3{font-size:1.25rem;margin:6px 0 10px}
+  .recap p{font-size:1rem;line-height:1.55;margin:0 0 12px}
   .more{font-family:var(--head);font-weight:700;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);border-bottom:3px solid var(--gold);text-decoration:none;align-self:start;justify-self:start;padding-bottom:3px}
 </style>
 </head>
@@ -313,7 +319,7 @@ window.PAGE_DATA = {
       </div>
       <div class="facts">
         <div class="fact"><b>21</b><span>counties, one town hall in every county in the district</span></div>
-        <div class="fact"><b id="crowd">1,700+</b><span>people showed up across southern Minnesota</span></div>
+        <div class="fact"><b id="crowd">1,800+</b><span>people showed up across southern Minnesota</span></div>
         <div class="fact"><b>0</b><span>questions screened in advance. Anyone could walk in and ask.</span></div>
       </div>
     </div>
@@ -516,6 +522,8 @@ window.PAGE_DATA = {
     var s = stops[+b.getAttribute('data-i')];
     openDlg(fmtDate(s.date) + ' \u00b7 ' + (s.label || s.town || ''), s.title || s.county + ' County',
       '<div class="media"><figure><img src="' + esc(photoUrl(s.photo, 1600)) + '" alt="' + esc(s.alt || '') + '"></figure></div>' +
+      (s.recap ? '<div class="recap"><p class="recap-k">Press release · ' + esc(s.recap.date || '') + '</p><h3>' + esc(s.recap.title || '') + '</h3>' +
+        (s.recap.paragraphs || []).map(function(p){ return '<p>' + esc(p) + '</p>'; }).join('') + '</div>' : '') +
       (s.link ? '<a class="more" href="' + esc(link(s.link)) + '">Read the recap &rarr;</a>' : ''));
   });
 })();
