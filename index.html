@@ -21,9 +21,14 @@
   Everything on the page comes from PAGE_DATA below. Change the text
   between the quotes, save, and re-upload. No other code needs to change.
 
+  featured.proof      Links shown under the main video caption, each { "label": "...", "url": "..." }.
   featured.youtubeId  The 11 characters after "v=" in the YouTube link.
                       e.g. https://www.youtube.com/watch?v=AbCdEfGhIjK -> "AbCdEfGhIjK"
                       Unlisted videos work fine.
+
+  AUTOMATIC CLIPS     Any video added to the "Town Hall Moments" YouTube playlist shows up in the
+                      swipeable row on its own within about an hour. No need to edit this file.
+                      To give one a town and date label, also add it to "videos" below.
 
   videos              The swipeable row of clips, in the order listed. Each one:
                         { "short": "<video ID>", "title": "<caption>", "town": "<town>", "date": "YYYY-MM-DD" }
@@ -49,7 +54,10 @@ window.PAGE_DATA = {
     "county": "Fillmore",
     "date": "2026-09-26",
     "length": "",
-    "note": "Every question, every answer, exactly as it happened. Nothing cut, nothing screened."
+    "note": "Advertised publicly a week in advance. Anyone could walk in and ask Jake anything.",
+    "proof": [
+      { "label": "See the announcement on Facebook, posted the week before", "url": "https://www.facebook.com/jakejohnsonmn/posts/weve-held-a-public-in-person-town-hall-meeting-in-each-of-the-21-counties-in-our/122198636000832045/" }
+    ]
   },
 
   "heroPhoto": "https://run.imgix.net/98efac20-09d5-40de-bced-671be80133fe/dbaddd41-67be-4005-8322-87aabafe7b71/dbaddd41-67be-4005-8322-87aabafe7b71.jpg",
@@ -60,7 +68,7 @@ window.PAGE_DATA = {
     {"short": "WzG7_2Z1jcE", "title": "It's Red, White, and Blue, not Red versus Blue.", "town": "Jackson", "date": "2026-07-06"},
     {"short": "2-OSZhsM8U0", "title": "We need a Balanced Budget Amendment", "town": "Jackson", "date": "2026-07-06"},
     {"short": "r0XMTGFk1zI", "title": "Brad Finstad traded our food and healthcare for his donors' tax cuts.", "town": "St. James", "date": "2026-07-20"},
-    {"short": "9ROI9t9E23Y", "title": "We need universal healthcare.", "town": "Austin", "date": "2026-07-23"},
+    {"short": "9ROI9t9E23Y", "title": "We need access to healthcare.", "town": "Austin", "date": "2026-07-23"},
     {"short": "I5t7V8sHnRQ", "title": "I work for people, not a party.", "town": "Austin", "date": "2026-07-23"},
     {"short": "JdL7Q8U5ifs", "title": "Finstad doesn't hold public meetings. I host them everywhere.", "town": "Rochester", "date": "2026-08-15"},
     {"short": "Yd_1Pl_qIEE", "title": "Get Flock cameras out of Minnesota.", "town": "Rochester", "date": "2026-08-15"},
@@ -136,21 +144,24 @@ window.PAGE_DATA = {
   /* hero + featured video */
   .hero{background:var(--navy);color:var(--white);padding:30px 0 40px;position:relative}
   .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:14px;background:repeating-linear-gradient(135deg,rgba(255,255,255,.16) 0 2px,transparent 2px 9px)}
-  .hero .eyebrow{color:var(--sky)}
-  .hero h1{color:var(--white);font-size:clamp(2rem,5vw,3.6rem);margin-top:10px;max-width:16ch}
+  .hero .eyebrow{color:var(--sky);text-align:center}
+  .hero h1{color:var(--white);font-size:clamp(2rem,5vw,3.6rem);margin:10px auto 0;max-width:22ch;text-align:center;text-wrap:balance}
   .hero h1 em{font-style:normal;color:var(--gold-2)}
-  .hero .lede{font-size:clamp(1rem,1.5vw,1.2rem);line-height:1.45;color:#D5E0F3;margin-top:12px;max-width:52ch}
-  .player{margin-top:24px;background:#000;box-shadow:0 18px 50px rgba(0,0,0,.35);border:3px solid var(--white)}
+  .hero .lede{font-size:clamp(1rem,1.5vw,1.2rem);line-height:1.45;color:#D5E0F3;margin:12px auto 0;max-width:52ch;text-align:center;text-wrap:balance}
+  .player{max-width:960px;margin:24px auto 0;background:#000;box-shadow:0 18px 50px rgba(0,0,0,.35);border:3px solid var(--white)}
   .player .ratio{position:relative;aspect-ratio:16/9;width:100%}
   .player iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
   .player .pending{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:20px;background:linear-gradient(rgba(20,35,67,.72),rgba(20,35,67,.86)) center/cover}
   .player .pending b{display:block;font-family:var(--head);font-weight:800;font-size:clamp(1rem,2vw,1.3rem)}
   .player .pending span{display:block;margin-top:6px;font-size:.95rem;color:#D5E0F3}
-  .caption{display:flex;flex-wrap:wrap;gap:8px 22px;align-items:baseline;margin-top:14px}
+  .caption{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px;align-items:baseline;margin:16px auto 0;max-width:960px;text-align:center}
   .tag{font-family:var(--head);font-weight:800;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;background:var(--gold-2);color:var(--navy);padding:6px 10px}
   .caption .where{font-family:var(--head);font-weight:700;font-size:1rem;color:var(--white)}
   .caption .note{flex-basis:100%;font-style:italic;color:#D5E0F3;font-size:1rem}
-  @media (max-width:600px){.hero{padding:20px 0 34px}.player{margin-left:-16px;margin-right:-16px;border-width:3px 0}}
+  .caption .proof{flex-basis:100%;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 20px;margin:0;padding:0;list-style:none}
+  .caption .proof a{font-family:var(--head);font-weight:700;font-size:.82rem;letter-spacing:.06em;color:var(--gold-2);text-decoration:none;border-bottom:2px solid rgba(228,214,119,.45);padding-bottom:2px}
+  .caption .proof a:hover{border-color:var(--gold-2)}
+  @media (max-width:600px){.hero{padding:20px 0 34px}.player{margin-left:calc(-1 * clamp(16px,5vw,56px));margin-right:calc(-1 * clamp(16px,5vw,56px));max-width:none;border-width:3px 0}}
 
   /* scoreboard */
   .score{background:var(--tint);padding:clamp(36px,6vw,64px) 0 clamp(36px,5vw,56px)}
@@ -260,7 +271,7 @@ window.PAGE_DATA = {
 <header class="top">
   <div class="wrap">
     <a class="logo" href="https://www.jakejohnsonforcongress.com/" aria-label="Jake Johnson for Congress homepage"><img src="https://run.imgix.net/98efac20-09d5-40de-bced-671be80133fe/03642d7d-f645-42e2-ae45-05b6631adb27/6737add3-9837-49e5-a2df-ce972e8b9c3d.webp?rect=0,0,4096,2384&amp;fit=fillmax&amp;w=600&amp;fm=png" alt="Jake Johnson for Congress" width="118" height="69"></a>
-    <a class="navlink" href="https://www.jakejohnsonforcongress.com/"><span class="long">Back to jakejohnsonforcongress.com</span><span class="short">&larr; Home</span></a>
+    <a class="navlink" href="https://www.jakejohnsonforcongress.com/"><span class="long">Back to home</span><span class="short">&larr; Home</span></a>
   </div>
 </header>
 
@@ -269,7 +280,7 @@ window.PAGE_DATA = {
     <div class="wrap">
       <p class="eyebrow">21 counties &middot; 21 town halls</p>
       <h1 id="h1">An entire public, in-person town hall. <em>Unedited.</em></h1>
-      <p class="lede">No pre-registration. No pre-screened questions. No cuts. Watch Jake take every question from the room, start to finish.</p>
+      <p class="lede">No pre-registration. No pre-screened questions. No cuts. Watch Jake's latest town hall here:</p>
 
       <div class="player">
         <div class="ratio" id="player"></div>
@@ -278,6 +289,7 @@ window.PAGE_DATA = {
         <span class="tag">Full, unedited</span>
         <span class="where" id="featWhere"></span>
         <p class="note" id="featNote"></p>
+        <ul class="proof" id="featProof"></ul>
       </div>
     </div>
   </section>
@@ -322,7 +334,7 @@ window.PAGE_DATA = {
       <div class="tour-head">
         <p class="eyebrow">The 21-county tour</p>
         <h2 id="tourH">Every stop, every county</h2>
-        <p>From Faribault in June to West Concord in August.</p>
+        <p>Read the recap from every town hall.</p>
       </div>
       <ol class="grid" id="grid"></ol>
     </div>
@@ -336,7 +348,6 @@ window.PAGE_DATA = {
       </div>
       <div class="btns">
         <a class="btn" href="https://doors.jakejohnsonforcongress.com/">Knock doors</a>
-        <a class="btn alt" href="https://www.volunteer.jakejohnsonforcongress.com/">Volunteer</a>
         <a class="btn gold" href="https://secure.actblue.com/donate/jjfc-website-2026?refcode=townhalls">Donate</a>
       </div>
     </div>
@@ -427,6 +438,9 @@ window.PAGE_DATA = {
   var where = [F.town ? F.town + (F.county ? ', ' + F.county + ' County' : '') : '', fmtDate(F.date), F.length].filter(Boolean).join(' · ');
   document.getElementById('featWhere').textContent = where;
   document.getElementById('featNote').textContent = F.note || '';
+  document.getElementById('featProof').innerHTML = (F.proof || []).filter(function(p){ return p.url; }).map(function(p){
+    return '<li><a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(p.label || p.url) + ' &rarr;</a></li>';
+  }).join('');
 
   var dlg = document.getElementById('dlg');
   var body = document.getElementById('dlgBody');
@@ -441,27 +455,48 @@ window.PAGE_DATA = {
   dlg.addEventListener('click', function(e){ if (e.target === dlg) closeDlg(); });
   dlg.addEventListener('close', function(){ body.innerHTML = ''; }); /* stops any playing video */
 
-  /* video reel */
-  var videos = D.videos || [];
+  /* video reel: the clips listed in PAGE_DATA, plus anything in the YouTube playlist (clips.json, refreshed automatically) */
   var reel = document.getElementById('reel');
-  if (videos.length) {
-    document.getElementById('moments').hidden = false;
+  var videos = [];
+  function renderReel(list){
+    videos = list;
+    document.getElementById('moments').hidden = !videos.length;
     reel.innerHTML = videos.map(function(v, k){
       var id = v.short || v.youtube;
       var thumb = 'https://i.ytimg.com/vi/' + esc(id) + '/' + (v.short ? 'oar2' : 'hqdefault') + '.jpg';
       return '<li><button class="clip" type="button" data-k="' + k + '"><span class="pic"><img src="' + thumb + '" alt="" loading="lazy" onerror="this.onerror=null;this.src=\'https://i.ytimg.com/vi/' + esc(id) + '/hqdefault.jpg\'"><span class="play"></span></span>' +
         '<span class="where">' + esc([v.town, fmtDate(v.date)].filter(Boolean).join(' \u00b7 ')) + '</span><span class="t">' + esc(v.title || '') + '</span></button></li>';
     }).join('');
-    reel.addEventListener('click', function(e){
-      var b = e.target.closest('.clip'); if (!b) return;
-      var v = videos[+b.getAttribute('data-k')];
-      if (location.protocol === 'file:') { window.open('https://www.youtube.com/' + (v.short ? 'shorts/' + v.short : 'watch?v=' + v.youtube), '_blank'); return; } /* YouTube won't play embeds in a file opened from disk */
-      openDlg([v.town, fmtDate(v.date)].filter(Boolean).join(' \u00b7 '), v.title || 'Town hall clip',
-        '<div class="media"><div class="v' + (v.short ? ' vert' : '') + '">' + yt(v.short || v.youtube, v.title || 'Town hall clip', true) + '</div></div>');
-    });
-    function step(dir){ reel.scrollBy({ left: dir * reel.clientWidth * 0.8 }); }
-    document.getElementById('prev').addEventListener('click', function(){ step(-1); });
-    document.getElementById('next').addEventListener('click', function(){ step(1); });
+  }
+  renderReel(D.videos || []);
+  reel.addEventListener('click', function(e){
+    var b = e.target.closest('.clip'); if (!b) return;
+    var v = videos[+b.getAttribute('data-k')];
+    if (location.protocol === 'file:') { window.open('https://www.youtube.com/' + (v.short ? 'shorts/' + v.short : 'watch?v=' + v.youtube), '_blank'); return; } /* YouTube won't play embeds in a file opened from disk */
+    openDlg([v.town, fmtDate(v.date)].filter(Boolean).join(' \u00b7 '), v.title || 'Town hall clip',
+      '<div class="media"><div class="v' + (v.short ? ' vert' : '') + '">' + yt(v.short || v.youtube, v.title || 'Town hall clip', true) + '</div></div>');
+  });
+  function step(dir){ reel.scrollBy({ left: dir * reel.clientWidth * 0.8 }); }
+  document.getElementById('prev').addEventListener('click', function(){ step(-1); });
+  document.getElementById('next').addEventListener('click', function(){ step(1); });
+
+  /* Playlist clips come first, in the playlist's order. A clip that's also listed in PAGE_DATA keeps its town and date
+     from there; the rest of the PAGE_DATA clips follow in tour order. */
+  if (window.fetch && location.protocol !== 'file:') {
+    fetch('clips.json', { cache: 'no-store' }).then(function(r){ return r.ok ? r.json() : null; }).then(function(j){
+      var auto = (j && j.clips) || [];
+      if (!auto.length) return;
+      var known = {};
+      (D.videos || []).forEach(function(v){ known[v.short || v.youtube] = v; });
+      var seen = {};
+      var merged = auto.map(function(c){
+        seen[c.id] = 1;
+        var k = known[c.id];
+        return k ? k : { short: c.id, title: c.title };
+      });
+      (D.videos || []).forEach(function(v){ if (!seen[v.short || v.youtube]) merged.push(v); });
+      renderReel(merged);
+    }).catch(function(){});
   }
 
   /* one photo per stop */
